@@ -1,0 +1,22 @@
+.table{
+    margin: 5px,5px,5px,5px;
+}
+.ml5{
+    margin-left: 5px;
+}
+.mr5{
+    margin-right: 5px;
+}
+.ag-theme-alpine {
+    --ag-header-height: 30px;
+    --ag-header-foreground-color: white;
+    --ag-header-background-color: black;
+    --ag-header-cell-hover-background-color: rgb(80, 40, 140);
+    --ag-header-cell-moving-background-color: rgb(80, 40, 140);
+}
+.p20{
+    padding:20px;
+}
+.bg-card{
+    background-color: beige;
+}

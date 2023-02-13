@@ -1,0 +1,27 @@
+.enquiry-form{
+    padding: 50px;
+    
+}
+.full-width{
+    width: 100%;
+}
+.my-card{
+    background-color:azure;
+    border: 2px solid black;
+    
+    margin:20px;
+}
+.my-button{
+    margin:20px;
+}
+
+.enquiry-logo{
+    padding: 10px;;
+    margin: 5px;
+    
+}
+.hints{
+    align-items: baseline;
+    text-align: left;
+    margin-left: 10px;
+}

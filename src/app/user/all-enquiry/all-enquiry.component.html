@@ -1,0 +1,67 @@
+<!-- <div *ngFor="let enq of enquires">
+        <div>
+            {{ enq | json }}
+        </div>
+    <hr>
+</div> -->
+<!-- <form class="from-control">
+    <input 
+        class="table"
+        type="number"
+        [(ngModel)]="enquiryId"
+        name="enquiryId"
+    > 
+    <button
+        (click)="showEnquiry()"
+    >Show Enquiry with <strong> {{enquiryId}}</strong>
+    </button>
+</form> -->
+
+<div class="conatainer-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngIf="showEnquiryCard">
+                <mat-card class="p20 b2 mt20 mb20 bg-card">
+                    <h4>Enquiry View</h4>
+                    <mat-card-title><strong class="ml5" >Id ::</strong> {{enq.id }} <strong class="ml5 mr5"> Createdon :</strong> {{enq.createdOn}}</mat-card-title>
+                    <mat-card-title class="ml5 mr5"><strong>Email :</strong> {{enq.email}} </mat-card-title>
+                    <mat-card-subtitle class="ml5 mr5"><strong>Phone :</strong> {{enq.phone}}</mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                    <strong>description :</strong>
+                    <mat-card-content class="mt20 mb20">{{enq.description}}</mat-card-content>
+                    <mat-divider></mat-divider>
+                    <button *ngIf="enq.active" mat-raised-button color="warn" class="mb5" (click)="toggleActive(enq.id)" >Set-InActive</button>
+                    <button *ngIf="!enq.active" mat-raised-button color="primary" (click)="toggleActive(enq.id)">Set-Active</button>
+                    <button mat-raised-button color="accent"(click)="closeEnquiry()" >Close</button>
+                </mat-card>      
+            </div>
+        </div>
+    </div>
+</div>
+<!-- {{rowData | json}} -->
+<div class="table">
+    <h3>Number of  Active Enquiry:: {{activeEnquires.length}}</h3>
+<ag-grid-angular 
+    style="width: 700px; height: 500px;" 
+    class="ag-theme-balham"
+    [rowData]="rowDataActive" 
+    [columnDefs] = "columnDefs"
+    [defaultColDef]="defaultColDef"
+    (rowClicked)="showEnquiry($event)"
+    >
+</ag-grid-angular>
+</div>
+
+<div class="table">
+    <h3 class="ml5">Numberof  In Active Enquiry:: {{inActiveEnquires.length}}</h3>
+<ag-grid-angular 
+    style="width: 700px; height: 500px;" 
+    class="ag-theme-balham"
+    [rowData]="rowDataInActive" 
+    [columnDefs] = "columnDefs"
+    [defaultColDef]="defaultColDef"     
+    (rowClicked)="showEnquiry($event)"
+    >
+</ag-grid-angular>
+</div>
+
